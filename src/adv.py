@@ -1,5 +1,6 @@
 from world import game_intro, room, item
 
+
 """ 
 Game Start
 """
@@ -9,13 +10,19 @@ player = game_intro()
 # game loops until player quits
 while True:
 
-    move = input("\nEnter your move(s, n, w, e, q):").lower()
-
+    action = input("\nEnter your action(s, n, w, e, q, take {itemname}, drop {itemname}):").lower()
+    # if
     try:
-        if move == 'q':
+        if action == 'q':
             break
+
+        elif action.split()[0] == 'take' or action.split()[0] == 'drop':
+
+            player.actions(action)
+
         else:
-            player.travel(move)
+            player.travel(action)
 
     except:
         print("\n--------------------------------\nError: Wrong Key\n--------------------------------\n")
+

@@ -17,19 +17,36 @@ def game_intro():
     print("\n---------Current Room---------")
     print(player.current_room.name)
     print(player.current_room.description)
-    print("Items in room: ", player.items)
+    print("Items in room: ", player.current_room.items)
+    print("Inventory: ", player.items)
     print("------------------------------")
 
     return player
+
+item = {
+
+    'rock': Item("Rock",
+                 "A small useless rock?"),
+
+    'knife': Item("Knife",
+                  "A handmade knife with blood stain on it!"),
+
+    'sword': Item("Sword",
+                  "A long shiny sword!!"),
+
+    'gold': Item("Gold",
+                 "One gold coin :/"),
+}
 
 
 # Declare all the rooms
 room = {
     'outside':  Room("Outside Cave Entrance",
-                     "North of you, the cave mount beckons"),
+                     "North of you, the cave mount beckons",
+                     "torch"),
 
-    'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
-passages run north and east."""),
+    'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty passages run north and east.""",
+                     "knife"),
 
     'overlook': Room("Grand Overlook", """A steep cliff appears before you, falling
 into the darkness. Ahead to the north, a light flickers in
@@ -40,7 +57,8 @@ to north. The smell of gold permeates the air."""),
 
     'treasure': Room("Treasure Chamber", """You've found the long-lost treasure
 chamber! Sadly, it has already been completely emptied by
-earlier adventurers. The only exit is to the south."""),
+earlier adventurers. The only exit is to the south.""",
+                     "Gold"),
 }
 
 
@@ -54,3 +72,4 @@ room['overlook'].s_to = room['foyer']
 room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
+
