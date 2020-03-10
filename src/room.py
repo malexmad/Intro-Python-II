@@ -3,8 +3,9 @@
 
 class Room:
     """
-    room class
+    Room class
     """
+
     def __init__(self, name, description, items=None):
         self.name = name
         self.description = description

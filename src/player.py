@@ -1,10 +1,11 @@
 # Write a class to hold player information, e.g. what room they are in
 # currently.
 
-class Player():
+class Player:
+    """
+    Player class
     """
 
-    """
     def __init__(self, name, starting_room, items=None):
         self.name = name
         self.current_room = starting_room
