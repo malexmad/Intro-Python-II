@@ -21,6 +21,7 @@ class Player:
             print("\n---------New Room---------")
             print(self.current_room.name)
             print(self.current_room.description)
+            print("Items in room: ", self.items)
             print("--------------------------")
         else:
             print("\nYou can't move that direction\n")
