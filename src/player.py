@@ -1,6 +1,7 @@
 # Write a class to hold player information, e.g. what room they are in
 # currently.
 
+
 class Player:
     """
     Player class
@@ -17,26 +18,31 @@ class Player:
 
     def travel(self, direction):
         next_room = getattr(self.current_room, f"{direction}_to")
+
         if next_room != None:
             self.current_room = next_room
-            print("\n---------New Room---------")
+            print("\n-----------New Room-----------")
             print(self.current_room.name)
             print(self.current_room.description)
-            print("Items in room: ", self.current_room.items)
+            if self.current_room.items != []:
+                print("Items in room:", self.current_room.items.name, "\n  ", self.current_room.items.description)
+            print("------------------------------")
             print("Inventory: ", self.items)
-            print("--------------------------")
+            print("------------------------------")
         else:
             print("\nYou can't move that direction\n")
 
+
     def actions(self, actions=None):
 
-        if actions.split()[0] == 'take':
-            add_item = actions.split()[1]
+        if actions.split()[0] == 'take' and actions.split()[1] == self.current_room.items.name.lower():
+            add_item = self.current_room.items.name
 
             if add_item != None:
                 self.items.append(add_item)
-                print("\n---------inventory---------")
-                print(self.items)
+                self.current_room.items = []
+                print("\n---------new item---------")
+                print('You have picked up a',self.items[-1])
                 print("--------------------------")
 
         elif actions.split()[0] == 'drop':

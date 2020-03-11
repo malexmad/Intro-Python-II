@@ -1,4 +1,4 @@
-from world import game_intro, room, item
+from world import game_intro, room
 
 
 """ 
@@ -11,14 +11,14 @@ player = game_intro()
 while True:
 
     action = input("\nEnter your action(s, n, w, e, q, take {itemname}, drop {itemname}):").lower()
-    # if
+
     try:
         if action == 'q':
             break
 
         elif action.split()[0] == 'take' or action.split()[0] == 'drop':
 
-            player.actions(action)
+                player.actions(action)
 
         else:
             player.travel(action)

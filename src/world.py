@@ -17,48 +17,53 @@ def game_intro():
     print("\n---------Current Room---------")
     print(player.current_room.name)
     print(player.current_room.description)
-    print("Items in room: ", player.current_room.items)
+    print("Items in room:", player.current_room.items.name, "\n  ", player.current_room.items.description)
+    print("------------------------------")
     print("Inventory: ", player.items)
     print("------------------------------")
 
     return player
 
-item = {
-
-    'rock': Item("Rock",
-                 "A small useless rock?"),
-
-    'knife': Item("Knife",
-                  "A handmade knife with blood stain on it!"),
-
-    'sword': Item("Sword",
-                  "A long shiny sword!!"),
-
-    'gold': Item("Gold",
-                 "One gold coin :/"),
-}
+# item = ['rock', 'knife', 'sword', 'gold']
+# item = {
+#
+#     'rock': Item("Rock",
+#                  "A small useless rock?"),
+#
+#     'knife': Item("Knife",
+#                   "A handmade knife with blood stain on it!"),
+#
+#     'sword': Item("Sword",
+#                   "A long shiny sword!!"),
+#
+#     'gold': Item("Gold",
+#                  "One gold coin :/"),
+# }
 
 
 # Declare all the rooms
 room = {
     'outside':  Room("Outside Cave Entrance",
                      "North of you, the cave mount beckons",
-                     "torch"),
+                Item("Rock",
+                     "A small useless rock?")),
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty passages run north and east.""",
-                     "knife"),
+                Item("Knife",
+                     "A handmade knife with blood stain on it!")),
 
-    'overlook': Room("Grand Overlook", """A steep cliff appears before you, falling
-into the darkness. Ahead to the north, a light flickers in
-the distance, but there is no way across the chasm."""),
+    'overlook': Room("Grand Overlook", """A steep cliff appears before you, fallinginto the darkness. Ahead to the north, 
+                                        a light flickers in the distance, but there is no way across the chasm.""",
+                Item("Sword",
+                     "A long shiny sword!!")),
 
-    'narrow':   Room("Narrow Passage", """The narrow passage bends here from west
-to north. The smell of gold permeates the air."""),
+    'narrow':   Room("Narrow Passage", """The narrow passage bends here from westto north. The smell of gold permeates 
+                                        the air."""),
 
-    'treasure': Room("Treasure Chamber", """You've found the long-lost treasure
-chamber! Sadly, it has already been completely emptied by
-earlier adventurers. The only exit is to the south.""",
-                     "Gold"),
+    'treasure': Room("Treasure Chamber", """You've found the long-lost treasure chamber! Sadly, it has already been 
+                                            completely emptied by earlier adventurers. The only exit is to the south.""",
+                Item("Gold",
+                     "One gold coin :/")),
 }
 
 
