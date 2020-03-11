@@ -5,7 +5,7 @@ from world import game_intro, room
 Game Start
 """
 
-# game introduction and player's name input
+# game introduction and input for player's name
 player = game_intro()
 
 # game loops until player quits
@@ -15,7 +15,7 @@ while True:
     action = input("\nEnter your action(s, n, w, e, q, i, take {itemname}, drop {itemname}):").lower()
 
     try:
-        # to quite game
+        # to quit game
         if action == 'q':
             break
 

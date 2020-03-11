@@ -17,6 +17,7 @@ def game_intro():
     player = Player(input('Enter your name:'), room['outside'])
     print("Player: ", player.name)
 
+    # Prints out the current room and player's inventory
     print("\n---------Current Room---------")
     print(player.current_room.name)
     print(player.current_room.description)
@@ -25,10 +26,11 @@ def game_intro():
     print("Inventory: ", player.items)
     print("------------------------------")
 
+    # returns a player instance
     return player
 
 
-# Declare all the rooms
+# Declare all the rooms and items in room
 room = {
     'outside':  Room("Outside Cave Entrance",
                      "North of you, the cave mount beckons",
@@ -55,7 +57,6 @@ room = {
 
 
 # Link rooms together
-
 room['outside'].n_to = room['foyer']
 room['foyer'].s_to = room['outside']
 room['foyer'].n_to = room['overlook']

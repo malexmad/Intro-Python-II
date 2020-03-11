@@ -14,6 +14,7 @@ class Room:
         self.e_to = None
         self.w_to = None
 
+        # if room is empty return an empty list or an item
         if items is None:
             self.items = []
         else:
