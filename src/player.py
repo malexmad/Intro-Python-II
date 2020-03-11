@@ -40,13 +40,14 @@ class Player:
 
             if add_item != None:
                 self.items.append(add_item)
+
                 self.current_room.items = []
                 print("\n---------new item---------")
                 print('You have picked up a',self.items[-1])
                 print("--------------------------")
 
-        elif actions.split()[0] == 'drop':
-            drop_item = actions.split()[1]
+        elif actions.split()[0] == 'drop' and actions.split()[1].title() in self.items:
+            drop_item = actions.split()[1].title()
 
             if drop_item != None:
                 self.items.remove(drop_item)
