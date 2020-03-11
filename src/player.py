@@ -51,12 +51,16 @@ class Player:
 
             if drop_item != None:
                 self.items.remove(drop_item)
+                print(f"You have dropped {drop_item}")
                 print("\n---------inventory---------")
                 print(self.items)
                 print("--------------------------")
 
         else:
             print("\nNo item available\n")
+
+    def inventory(self):
+        print("\nInventory:", self.items)
 
 
     # def __str__(self):

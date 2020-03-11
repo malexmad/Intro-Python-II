@@ -24,22 +24,6 @@ def game_intro():
 
     return player
 
-# item = ['rock', 'knife', 'sword', 'gold']
-# item = {
-#
-#     'rock': Item("Rock",
-#                  "A small useless rock?"),
-#
-#     'knife': Item("Knife",
-#                   "A handmade knife with blood stain on it!"),
-#
-#     'sword': Item("Sword",
-#                   "A long shiny sword!!"),
-#
-#     'gold': Item("Gold",
-#                  "One gold coin :/"),
-# }
-
 
 # Declare all the rooms
 room = {
