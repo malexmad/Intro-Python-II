@@ -7,8 +7,11 @@ def game_intro():
     # Intro
 
     print("Welcome, try to reach the treasure room\nYou will start outside of the cave!\n"
-          "You will have 4 options to move from room to room(North(n), South(s), West(w), East(e))\n"
-          "To quit enter 'q'\n ")
+          "\nYou will have 4 options to move from room to room(North(n), South(s), West(w), East(e))\n"
+          "To pick up items enter: take itemname\n"
+          "To drop item enter: drop itemname\n"
+          "Enter 'i' to see your inventory\n"
+          "\nTo quit enter 'q'\n ")
 
     # Player enter their name, default starting room is outside
     player = Player(input('Enter your name:'), room['outside'])
@@ -34,7 +37,7 @@ room = {
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty passages run north and east.""",
                 Item("Knife",
-                     "A handmade knife with blood stain on it!")),
+                     "A handmade knife with blood stains on it!")),
 
     'overlook': Room("Grand Overlook", """A steep cliff appears before you, fallinginto the darkness. Ahead to the north, 
                                         a light flickers in the distance, but there is no way across the chasm.""",

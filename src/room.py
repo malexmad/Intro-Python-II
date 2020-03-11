@@ -19,9 +19,6 @@ class Room:
         else:
             self.items = items
 
-    def rem_item(self):
-            self.items = []
-
 
     def __repr__(self):
         return "Room('{}', '{}', '{}')".format(self.name, self.description, self.items)
