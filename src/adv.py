@@ -31,6 +31,7 @@ while True:
         # to move player
         else:
             player.travel(action)
+            player.room_info()
 
     except:
         print("\n--------------------------------\nError: Wrong Key\n--------------------------------\n")

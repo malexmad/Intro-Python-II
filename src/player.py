@@ -23,14 +23,6 @@ class Player:
 
         if next_room != None:
             self.current_room = next_room
-            print("\n--------------New Room--------------")
-            print(self.current_room.name)
-            print(self.current_room.description)
-            if self.current_room.items != []:
-                print("Items in room:", self.current_room.items.name, "\n  ", self.current_room.items.description)
-            else:
-                print("Room is empty!")
-            print("-------------------------------------")
 
         else:
             print("\nYou can't move that direction\n")
@@ -59,6 +51,18 @@ class Player:
         # error
         else:
             print("\nNo item available\n")
+
+    def room_info(self):
+        """ method """
+        print("\n--------------New Room--------------")
+        print(self.current_room.name)
+        print(self.current_room.description)
+        if self.current_room.items != []:
+            print("Items in room:", self.current_room.items.name, "\n  ", self.current_room.items.description)
+        else:
+            print("Room is empty!")
+        print("-------------------------------------")
+
 
     def inventory(self):
         """ method for player to check their inventory """
