@@ -3,9 +3,10 @@
 
 class Room:
     """
-    room class
+    Room class
     """
-    def __init__(self, name, description):
+
+    def __init__(self, name, description, items=None):
         self.name = name
         self.description = description
         self.n_to = None
@@ -13,6 +14,16 @@ class Room:
         self.e_to = None
         self.w_to = None
 
+        # if room is empty return an empty list or an item
+        if items is None:
+            self.items = []
+        else:
+            self.items = items
+
+
+    def __repr__(self):
+        return "Room('{}', '{}', '{}')".format(self.name, self.description, self.items)
+
     def __str__(self):
-        return (f'{self.room},\n {self.description}')
+        return (f'{self.name},\n {self.description}')
 
